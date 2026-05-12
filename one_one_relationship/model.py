@@ -10,7 +10,7 @@ class User(base):
     __tablename__='users'
     id:Mapped[int]=MappedColumn(primary_key=True)
     name:Mapped[str]=MappedColumn(String)
-    address: Mapped[List["Address"]] = relationship(back_populates="user")
+    address: Mapped[List["Address"]] = relationship(back_populates="user",uselist=False)
 class Address(base):
     __tablename__="addresses"
     id:Mapped[int]=MappedColumn(primary_key=True)
